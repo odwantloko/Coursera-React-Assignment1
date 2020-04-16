@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Media } from 'reactstrap';
 
-//import Dishdetail from '../components/DishdetailComponent'
+ 
 import { Card, CardImg, CardImgOverlay, CardText, CardBody,
     CardTitle } from 'reactstrap';
+import Dishdetail from './DishdetailComponent';
 
 class Menu extends Component {
 
@@ -22,15 +23,11 @@ class Menu extends Component {
     renderDish(dish) {
         if (dish != null)
             return(
-              <Card>
-                  <CardImg top src={dish.image} alt={dish.name} />
-                  <CardBody>
-                    <CardTitle>{dish.name}</CardTitle>
-                    <CardText>{dish.description}</CardText>
-                  </CardBody>
-              </Card>
-          );
-
+              <Dishdetail 
+              image = {dish.image}
+              name = {dish.name}
+              description = {dish.description} />
+            );
         else
             return(
                 <div></div>
