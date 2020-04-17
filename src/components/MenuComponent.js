@@ -34,16 +34,16 @@ class Menu extends Component {
             );
     }
 
+
     renderComments(comments) {
-        var arr = [{}, {}];
         if (comments != null)
             return (
                 <div>
                     <h4> Comments </h4>
                     {comments.map((item, key) =>
                     <ul className="list-unstyled">
-                         <li>{item.author}</li>
                          <li>{item.comment}</li>
+                         <li>-- {item.author}, </li>
                      </ul>
                     )}
                    
@@ -80,6 +80,8 @@ class Menu extends Component {
                 <div className="row">
                   <div  className="col-12 col-md-5 m-1">
                     { this.renderDish(this.state.selectedDish)}
+                  </div>
+                  <div className="col-12 col-md-5 m-1">
                     { this.state.selectedDish  ? this.renderComments(this.state.selectedDish.comments) : null}
                   </div>
                 </div>
