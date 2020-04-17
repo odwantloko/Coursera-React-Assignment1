@@ -34,15 +34,20 @@ class Menu extends Component {
             );
     }
 
-    renderComments(dish) {
+    renderComments(comments) {
         var arr = [{}, {}];
-        if (dish != null)
+        if (comments != null)
             return (
-                <ul className="list-unstyled">
-                    <li>{dish.comments[0].comment}</li>
-                    
-                </ul>
-               
+                <div>
+                    <h4> Comments </h4>
+                    {comments.map((item, key) =>
+                    <ul className="list-unstyled">
+                         <li>{item.author}</li>
+                         <li>{item.comment}</li>
+                     </ul>
+                    )}
+                   
+                </div>
             );
         else  
             return (
@@ -74,8 +79,8 @@ class Menu extends Component {
                 </div>
                 <div className="row">
                   <div  className="col-12 col-md-5 m-1">
-                    {this.renderDish(this.state.selectedDish)}
-                    {this.renderComments(this.state.selectedDish)}
+                    { this.renderDish(this.state.selectedDish)}
+                    { this.state.selectedDish  ? this.renderComments(this.state.selectedDish.comments) : null}
                   </div>
                 </div>
             </div>
