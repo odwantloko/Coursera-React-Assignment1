@@ -34,6 +34,22 @@ class Menu extends Component {
             );
     }
 
+    renderComments(dish) {
+        var arr = [{}, {}];
+        if (dish != null)
+            return (
+                <ul className="list-unstyled">
+                    <li>{dish.comments[0].comment}</li>
+                    
+                </ul>
+               
+            );
+        else  
+            return (
+                <div></div>
+            );
+    }
+
     render() {
         const menu = this.props.dishes.map((dish) => {
             return (
@@ -49,6 +65,8 @@ class Menu extends Component {
             );
         });
 
+        
+
         return (
             <div className="container">
                 <div className="row">
@@ -57,6 +75,7 @@ class Menu extends Component {
                 <div className="row">
                   <div  className="col-12 col-md-5 m-1">
                     {this.renderDish(this.state.selectedDish)}
+                    {this.renderComments(this.state.selectedDish)}
                   </div>
                 </div>
             </div>

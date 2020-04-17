@@ -7,7 +7,11 @@ import { Card, CardImg, CardImgOverlay, CardText, CardBody,
 class Dishdetail extends Component {
   render() {
     return (
-      <div>
+    //   <div className="row">
+    //   <div  className="col-12 col-md-5 m-1">
+    //     {this.renderDish(this.state.selectedDish)}
+    //   </div>
+    // </div>
           <Card>
             <CardImg top src={this.props.image} alt={this.props.name} />
             <CardBody>
@@ -15,7 +19,7 @@ class Dishdetail extends Component {
                 <CardText>{this.props.description}</CardText>
             </CardBody>
         </Card>
-       </div>
+      //  </div>
     );
   }
 }
