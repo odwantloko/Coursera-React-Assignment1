@@ -43,7 +43,7 @@ class Menu extends Component {
                     {comments.map((item, key) =>
                     <ul className="list-unstyled">
                          <li>{item.comment}</li>
-                    <li>-- {item.author}, {new Date(item.date).toDateString()}</li>
+                    <li>-- {item.author}, {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(item.date)))}</li>
                      </ul>
                     )}
                    
