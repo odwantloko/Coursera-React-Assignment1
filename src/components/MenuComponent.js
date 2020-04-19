@@ -43,7 +43,7 @@ class Menu extends Component {
                     {comments.map((item, key) =>
                     <ul className="list-unstyled">
                          <li>{item.comment}</li>
-                         <li>-- {item.author}, </li>
+                    <li>-- {item.author}, {new Date(item.date).toDateString()}</li>
                      </ul>
                     )}
                    
