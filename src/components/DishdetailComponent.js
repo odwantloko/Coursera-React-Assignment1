@@ -47,7 +47,7 @@ function RenderComments({comments}) {
     <div className="row">
         <Breadcrumb>
 
-            <BreadcrumbItem><Link to="/menu">Menu</Link></BreadcrumbItem>
+            <BreadcrumbItem><Link to="/menu">Back to Stores</Link></BreadcrumbItem>
             <BreadcrumbItem active>{props.dish.name}</BreadcrumbItem>
         </Breadcrumb>
         <div className="col-12">
